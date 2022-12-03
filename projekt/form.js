@@ -51,7 +51,8 @@ function validateFields(nameInput, quantityInput, priceInput) {
 
 const form = document.querySelector("#productForm");
 
-let products;
+const products = [];
+localStorage.setItem('products', JSON.stringify(products));
 
 
 form.addEventListener("submit", function (event) {
@@ -59,15 +60,16 @@ form.addEventListener("submit", function (event) {
 
     if (validateFields(form.elements["name"], form.elements["quantity"], form.elements["price"])) {
 
-        let product = {
+        const product = {
             name: form.elements["name"].value,
             quantity: form.elements["quantity"].value,
             price: form.elements["name"].value,
             sum: form.elements["quantity"].value * form.elements["price"].value
         }
-        //products.push(product);
-        console.log(product);
-        //console.log(products);
+        
+        const arr = JSON.parse(localStorage.getItem('products'));
+        arr.push(product);
+        localStorage.products = JSON.stringify(arr);
     }
 
 
