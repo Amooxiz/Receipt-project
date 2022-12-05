@@ -49,6 +49,54 @@ function validateFields(nameInput, quantityInput, priceInput) {
     return isValidated;
 }
 
+function clearBox(id)
+{
+    document.getElementById(id).innerHTML = "";
+}
+
+function createTable(array, product) {
+    clearBox("PForm");
+    let div = document.getElementById("PForm");
+
+    const tbl = document.createElement("table");
+    const tblBody = document.createElement("tbody");
+
+    for (let i = -1; i < array.length; i++) {
+        const row = document.createElement("tr");
+
+        if (i === -1)
+        {
+            for (var prop in product) {
+                if (Object.prototype.hasOwnProperty.call(product, prop)) {
+                    const cell = document.createElement("td");
+                    const cellTxt = document.createTextNode(prop);
+
+                    cell.appendChild(cellTxt);
+                    row.appendChild(cell);
+                }
+            }
+            tblBody.appendChild(row);
+            continue;
+        }
+
+        for (const [key, value] of Object.entries(array[i])) {
+            const cell = document.createElement("td");
+            const cellTxt = document.createTextNode(value);
+
+            cell.appendChild(cellTxt);
+            row.appendChild(cell);
+            
+        }
+        tblBody.appendChild(row);
+    }
+
+    tbl.appendChild(tblBody);
+
+    //document.body.appendChild(tbl);
+    div.appendChild(tbl);
+    tbl.setAttribute("border", "2");
+}
+
 const form = document.querySelector("#productForm");
 
 const products = [];
@@ -63,13 +111,14 @@ form.addEventListener("submit", function (event) {
         const product = {
             name: form.elements["name"].value,
             quantity: form.elements["quantity"].value,
-            price: form.elements["name"].value,
+            price: form.elements["price"].value,
             sum: form.elements["quantity"].value * form.elements["price"].value
         }
         
         const arr = JSON.parse(localStorage.getItem('products'));
         arr.push(product);
         localStorage.products = JSON.stringify(arr);
+        createTable(arr, product);
     }
 
 
