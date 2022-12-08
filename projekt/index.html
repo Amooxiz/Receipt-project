@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="form.js" defer></script>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -16,9 +17,10 @@
             <th>Cena</th>
             <th>Ilosc</th>
             <th>Suma</th>
+            <th>Buttons</th>
         </tr>
     </table>
-
+    <div id="summed" class="sum">SUMA: 0</div>
     <div class="container">
         <form method="post" id="productForm">
             <h1>Add product</h1>
@@ -37,8 +39,10 @@
                 <input type="number" id="price"/>
                 <small></small>
             </div>
-            <div class="field">
-                <button type="submit" class="full">Submit</button>
+            <div class="fieldButtons">
+                <button  id="submit" type="submit" class="full">ADD</button>
+                <button id="edit" type="submit" disabled="true">EDIT</button>
+                <button id="delete" type="submit" disabled="true">DELETE</button>
             </div>
         </form>
     </div>

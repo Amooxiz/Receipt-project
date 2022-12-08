@@ -1,0 +1,89 @@
+*{
+    margin:0;
+    padding: 0;
+    font-family: 'Courier New', Courier, monospace;
+    box-sizing: border-box;
+}
+table {
+    width: 600px;
+    margin: 50px auto;
+    padding: 10px;
+    background-color: rgb(126, 85, 241);
+    color: white;
+    font-size: 20px;
+    border-radius: 20px;
+}
+table th{
+    color: black;
+    font-size: 25px;
+    background-color: rgb(126, 85, 241);
+    width: 20px;
+    height: 20px;
+}
+table button {
+    font-size: 20px;
+    background-color: transparent;
+    color: white;
+    margin: 5px;
+    border: none;
+}
+table tr{
+    background-color: rgb(85, 26, 163);
+    width: 20px;
+    height: 20px;
+}
+table td{
+    padding: 5px;
+    text-align: center;
+}
+.sum{
+    background-color:  rgb(85, 26, 163);
+    border: 10px solid rgb(126, 85, 241);
+    padding: 10px;
+    width: 160px;
+    color: white;
+    margin: 50px auto;
+    font-weight: 800;
+    border-radius: 20px;
+    font-size: 20px;
+}
+form {
+    margin:  0 auto;
+    width: 600px;
+    padding: 10px;
+    background-color:  rgb(85, 26, 163);
+    border: 10px solid rgb(126, 85, 241);
+    border-radius: 20px;
+    padding: 10px;
+    font-size: 20px;
+    display: flex;
+    flex-flow: column;
+}
+form h1{
+    color: white;
+}
+form label {
+    width: 100%;
+    color: white;
+}
+form input{
+    margin: 2px 0;
+    width: 100%;
+    padding: 8px;
+    border-radius: 10px;
+    border: none;
+    font-size: 16px;
+}
+form button{
+    font-size: 20px;
+}
+.fieldButtons {
+   margin: 10px 0px;
+}
+.fieldButtons button {
+    background-color: rgb(126, 85, 241);;
+    padding: 5px;
+    color: white;
+    font-weight: 800;
+    border: 2px solid white;
+}
